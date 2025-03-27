@@ -94,3 +94,15 @@ Using RwLock would allow multiple readers at the same time.  Most of the operati
 Static variables are thread-safe and immutable, because of the ownership model and thread safety guarantees. Rust could use tools like RwLock,Mutex and libraries like lazy_static to synchronize the shared mutable data. Rust will prioritize safety at the compile stage, meaning that it won't allow mutation of static variabels without the right synchronization
 
 #### Reflection Subscriber-2
+
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+
+No I haven't explored anything beyond the steps of the tutorial. I was focused on completing the tutorial as most of the topics covered in this tutorial are already quite heavy to me. 
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+
+The observer pattern makes adding more subscribers simpler as each subscriber will register itself with the publisher. When we add multiple instances of the Main app, it will make the system more complicated as it needs to share consistent data. 
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+
+No I haven't tried creating tests yet as I focused on completing the tutorial requirements. In the future, I should look further into documentation in the postman collectin as it would be useful to ensure that the API will work.
