@@ -85,5 +85,12 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. In this tutorial, we used RwLock<> to synchronise the use of Vec of Notifications. Explain why it is necessary for this case, and explain why we do not use Mutex<> instead?
+
+Using RwLock would allow multiple readers at the same time.  Most of the operations are read so RWLock would more suitable than Mutex. If we used Mutex, it could block al access during a write, which can bottleneck the system.
+
+2.  Compared to Java where we can mutate the content of a static variable via a static function, why did not Rust allow us to do so?
+
+Static variables are thread-safe and immutable, because of the ownership model and thread safety guarantees. Rust could use tools like RwLock,Mutex and libraries like lazy_static to synchronize the shared mutable data. Rust will prioritize safety at the compile stage, meaning that it won't allow mutation of static variabels without the right synchronization
 
 #### Reflection Subscriber-2
